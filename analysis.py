@@ -2,16 +2,23 @@
 
 import pandas as pd
 
-
 class SuperstoreAnalysis:
-    def __init__(self, filepath: str):
+    def __init__(self, data):
         """
-        Initialize the SuperstoreAnalysis object with the dataset.
+        Initialize the SuperstoreAnalysis object.
 
         Parameters:
-        - filepath (str): Path to the Superstore dataset (CSV).
+        - data (str or pd.DataFrame): Path to the dataset (CSV) or a pandas DataFrame.
         """
-        self.data = pd.read_csv(filepath)
+        if isinstance(data, str):
+            # Load the dataset from a CSV file
+            self.data = pd.read_csv(data)
+        elif isinstance(data, pd.DataFrame):
+            # Use the provided DataFrame
+            self.data = data
+        else:
+            raise ValueError("Data must be a file path (str) or a pandas DataFrame.")
+
 
     def total_sales_by_category(self) -> pd.DataFrame:
         """
