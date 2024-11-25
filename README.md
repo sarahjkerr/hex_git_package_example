@@ -4,11 +4,11 @@ An example repository for importing an existing python script into a Hex project
 ## Examples
 
 ### Initialize and point at the data
-import pandas as pd
-from retail_analysis import SuperstoreAnalysis
+`import pandas as pd`
+`from retail_analysis import SuperstoreAnalysis`
 
 #### Example: Assuming you already have a pandas DataFrame named `df`
-df = pd.read_csv("SampleSuperstore.csv")  # Example DataFrame
+df = pd.read_csv("SampleSuperstore.csv") 
 
 #### Initialize the analyzer with a DataFrame
 analyzer = SuperstoreAnalysis(df)
